@@ -1,7 +1,9 @@
 /* ---------------------HEADER--------------------- */
 
 body {
-    margin: 30px 50vh 0px 50vh;
+    max-width: 600px;
+    margin: 20px auto;
+    /* margin: 30px 30px 0px 30px; */
     font-family: "Geist Mono", monospace;
     display: flex;
     flex-direction: column;
@@ -9,6 +11,13 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+* {
+    color: var(--text); 
+    line-height: 1.6;  
+    letter-spacing: .025em;   
+    --text: #212121;
+    --bg: #f9f9f9;}
+    
 .header {
     display: flex;
     justify-content: space-between;
@@ -16,7 +25,7 @@ body {
 }
 
 .header .name {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: lighter;
 }
 
@@ -28,7 +37,7 @@ body {
 .header .menu a {
     text-decoration: none;
     color: #2E2E2E;
-    font-size: 15px;
+    font-size: 22px;
 
 }
 
@@ -37,71 +46,53 @@ body {
 }
 
 
-* {
-  color: var(--text); 
-  line-height: 1.6;  
-  letter-spacing: .025em; 
-  font-family: "Geist Mono", monospace;}
-
 /* ---------------------CONTENT--------------------- */
-
-.project h2 {
-    font-size: 20px;
-    text-align: left;
-    max-width: 650px;
-    /* margin: 0px 100px 10px 100px; */
-}
 
 h2 {
     font-size: 20px;
     align-self: left;
-    margin: 25px auto;
-    max-width: 650px;
-    /* margin: 0px 100px 10px 100px; */
+}
+
+main {
+    margin: 30px 600px 0px 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bio {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .now, .post {
-  border: 1px solid;
-  border-color: rgb(220, 220, 220);
-  border-radius: 5px;
-  padding: 25px;
-  /* margin: 0px 100px 30px 100px; */
-  margin: 25px auto;
-  max-width: 600px;
-  font-size: 14px;
+    font-size: 14px;
 }
 
-.project {
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    border-color: rgb(131, 131, 131);
-    padding-top: 25px;
-    padding-bottom: 25px;
-    /* margin: 0px 100px 30px 100px; */
-    margin: 20px auto;
-    max-width: 100%;
-    font-size: 14px;
-  }
-
-.project small {font-size: 20px;}
-
-
-
 img {
-    width: 9%;
+    width: 15%;
     height: auto;
     display: block;
-    margin: auto;}
+    margin: auto;
+}
 
-.bio {text-align: center; font-size: 14px; margin-bottom: 50px; margin-top: 30px}
-
-.avatar {width: 112px; height:112px; margin: auto;}
-
-small {color: #000000; background-color: #84b69332;}
-
-.post img {
+.now {
     width: 100%;
-    height: auto;
+    border: 1px solid #bababa;
+    padding: 15px;
+    margin: auto;
+}
+
+.post {
+    width: 100%;
+    border: 1px solid #bababa;
+    padding: 15px;
+    margin: auto;
+}
+
+div small {
+    color: #84B693;
 }
 
 /* ---------------------FOOTER--------------------- */
