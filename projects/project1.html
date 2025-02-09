@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victoria Becher</title>
+    <link rel="icon" href="../../assets/images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+    <header class="header">
+        <div class="name">VICTORIA BECHER</div>
+        <nav class="menu">
+            <a href="../../index.html">home</a>
+            <a href="../../layouts/about.html" >about</a>
+            <a href="../../layouts/blog.html">blog</a>
+            <a href="../../layouts/projects.html" style="color: #84B693;">projects</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="project" id="1">
+            <a href="../../layouts/projects.html" style="text-decoration: none">projects</a> / <small>MY READING DATABASE</small>
+                <div class="content">
+                    <h3>Purpose of the Database</h3>
+                    <p>The idea for this database project originated during my Database Administration course at the Federal Institute of Rio Grande do Sul. My objective was to apply the key concepts learned in the course to organize and manage my personal reading data using best practices.</p>
+                    <p>By building this database, I aimed to gain hands-on experience with database design, data transformation, and management, while creating a tool to track and analyze my reading habits.</p>
+                    <h3>Tools and Technologies</h3>
+                    <h3>1. Data Acquisition (Extract and Transform)</h3>
+                    <p>I began registering my readings in 2019, when I became an avid reader and started using the Goodreads app.</p>
+                    <p>Goodreads functions as a social network for readers, offering features like book searches, virtual shelves, reading progress updates, and social interactions with other users. It also allows users to export their reading data in a tabular format (.csv file), which includes information such as book titles, authors, number of pages, end dates, and personal ratings.</p>
+                        <figure class="image-container">
+                            <img src="../../assets/images/projects/project1/1.png" alt="My Goodreads bookshelf page">
+                            <figcaption>My Goodreads bookshelf page</figcaption>
+                        </figure>
+                        <figure class="image-container">
+                            <img src="../../assets/images/projects/project1/3.png" alt="Exported data .csv file">
+                            <figcaption>Exported data .csv file</figcaption>
+                        </figure>
+                    <p>However, the exported data lacks key information available on the platform, such as the <i>start date</i> of each book and its <i>genre</i>. To fill this gap, I also exported my reading database from Notion, which I had been using to track additional details about my readings.</p>
+                    <figure class="image-container">
+                        <img src="../../assets/images/projects/project1/4.png" alt="My Notion reading database">
+                        <figcaption>My Notion reading database</figcaption>
+                    </figure>
+                    <p>After exporting the data, I performed a data transformation step using Python. This step involved cleaning the dataset, removing unnecessary columns (e.g., ISBN, average rating, publisher, binding), and combining information from Goodreads and Notion into a final, cohesive table.</p>
+                    <h3>Challenges and Solutions:</h3>
+                    <ul>
+                        <li>Missing data: Start dates and genres were added manually from Notion exports.</li>
+                        <li>Data cleaning: Python scripts were used to ensure the data was well-structured and aligned for import into the database.</li>
+                    </ul> 
+                    <h3>2. Database Structure</h3>
+                    <h3>a. Conceptual Model</h3>
+                    <p>The structure of my database was designed based on the principles of normalization learned in my course. I decomposed the all-in-one table into multiple smaller, related tables to minimize redundancy and maintain data integrity. The final design includes four tables:</p>
+                    <figure class="image-container">
+                        <img src="../../assets/images/projects/project1/5.png" alt="Database tables and its attributes">
+                        <figcaption>Database tables and its attributes</figcaption>
+                    </figure>
+                    <ul>
+                        <li><b>Books</b> Table: Stores information intrinsic to the book, such as its title, genre, and publication details.</li>
+                        <li><b>Readings</b> Table: Captures personal experiences with the books, such as start and end dates, ratings, and formats, allowing for multiple readings of the same book.</li>
+                        <li><b>Authors</b> Table: Includes demographic data about authors for analytical purposes.</li>
+                        <li><b>Book_Author</b> Table: Resolves the many-to-many relationship between books and authors, accommodating cases where a book has multiple authors or an author has written multiple books.</li>
+                    </ul>
+                    <p>The relationships between these tables are illustrated in the conceptual model below:</p>
+                    <figure class="image-container">
+                        <img src="../../assets/images/projects/project1/6.png" alt="Conceptual model for the database">
+                        <figcaption>Conceptual model for the database</figcaption>
+                    </figure>
+                    <h3>b. Database Management System (DBMS)</h3>
+                    <p>I selected PostgreSQL as the database management system (DBMS) for this project due to its reliability, open-source nature, and extensive community support. I used <b>pgAdmin</b> as the graphical interface to manage the database.</p>
+                    <p>To create the tables and define their attributes, I used both SQL scripts and pgAdmin's GUI. While SQL scripting allowed me to practice and deepen my understanding of the language, the GUI provided an intuitive method for defining relationships and constraints, which was especially helpful for a first-time database project.</p>
+                    <figure class="image-container">
+                        <img src="../../assets/images/projects/project1/7.png" alt="Create table tool in pgAdmin">
+                        <figcaption><i>Create table</i> tool in pgAdmin</figcaption>
+                    </figure>
+                    <p>Sample SQL script used to create the "books" table:</p>
+                    <div class="sql">
+                        <i>CREATE TABLE books ( <br>
+                            id_book INTEGER PRIMARY KEY,<br>
+                            book TEXT NOT NULL,<br>
+                            pages SMALLINT,<br>
+                            price NUMERIC(10, 2),<br>
+                            series TEXT,<br>
+                            genre TEXT,<br>
+                            first_published SMALLINT);</i>
+                    </div>
+                    <p>The database structure was further visualized through an Entity-Relationship Diagram (ERD), created using pgAdmin tools:</p>
+                    <figure class="image-container">
+                        <img src="../../assets/images/projects/project1/8.png" alt="ERD for the reading database">
+                        <figcaption>ERD for the reading database created in pgAdmin</figcaption>
+                    </figure>
+                    <h3>3. Data Import (Load)</h3>
+                    <p>Once the database structure was finalized, I imported the prepared data from .csv files into the corresponding tables. I used pgAdmin's import tool to handle this step efficiently. These .csv files also serve as templates for future data imports. For ongoing updates, I plan to manually add new rows using the pgAdmin interface.</p>
+                    <h3>Final Considerations, Lessons Learned, and Future Plans</h3>
+                    <p>The primary goal of this project was to learn database administration while organizing data I already managed using other tools. By tackling various challenges in each step—data extraction, transformation, modeling, and loading—I strengthened my understanding of database principles and best practices.</p>
+                    <h3>Key Lessons:</h3>
+                    <ul>
+                        <li>Designing normalized database structures improves scalability and reduces redundancy.</li>
+                        <li>Python is an excellent tool for data cleaning and transformation tasks prior to database imports.</li>
+                        <li>PostgreSQL and pgAdmin, both open-source tools,  offer robust features for managing and visualizing relational databases.</li>
+                    </ul>
+                    <h3>Future Plans:</h3>
+                    <ul>
+                        <li>Add a new table to track progress on book series (e.g., percentage completed).</li>
+                        <li>Develop an automation script to directly extract and import data from Goodreads into the database using Goodreads API.</li>
+                        <li>Use the database as a data source for a Power BI dashboard, enabling dynamic analysis of reading trends and habits.</li>
+                    </ul>
+                </div>
+                <p><a href="#top">Back to the top</a></p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Made just for fun © 2024 All rights reserved</p>
+        <div class="circles">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+    </footer>
+
+</body>
+</html>

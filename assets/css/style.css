@@ -1,0 +1,123 @@
+/* ---------------------HEADER--------------------- */
+body {
+    margin: 30px 50vh 0px 50vh;
+    font-family: "Geist Mono", monospace;
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    background-color: rgb(255, 255, 255);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .name {
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.header .menu {
+    display: flex;
+    gap: 15px;
+}
+
+.header .menu a {
+    text-decoration: none;
+    color: #2E2E2E;
+    font-size: 15px;
+
+}
+
+.header .menu a:hover {
+    color: #84B693;
+}
+
+
+* {
+  color: var(--text); 
+  line-height: 1.6;  
+  letter-spacing: .025em; 
+  font-family: "Geist Mono", monospace;}
+
+/* ---------------------CONTENT--------------------- */
+
+main {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-areas: 
+    "A B"
+    "C B";
+}
+
+.right-column {
+    grid-area: B;
+    height: 130px;
+    width: auto;
+    display: flex;
+}
+
+/* ---------------------FOOTER--------------------- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer p {
+    font-size: 12px;
+    font-weight: light;
+    text-align: right;
+}
+
+.circle1 {
+    width: 20px;
+    height: 20px;
+    background-color: #84B693;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle2 {
+    width: 20px;
+    height: 20px;
+    background-color: #DDAAD7;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle3 {
+    width: 20px;
+    height: 20px;
+    background-color: #2E2E2E;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle4 {
+    width: 20px;
+    height: 20px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.cover {
+    margin: 100px 0px 180px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.styled-image {
+    width: 10%;
+    height: auto;
+    display: inline;
+    transition: transform 0.3s;
+}
+
+.custom-underline {
+    text-decoration: underline;
+    text-decoration-color: #DDAAD7; /* Set underline color */
+    text-decoration-thickness: 3px;
+  }
