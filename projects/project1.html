@@ -15,10 +15,10 @@
     <header class="header">
         <div class="name">VICTORIA BECHER</div>
         <nav class="menu">
-            <a href="../../index.html">home</a>
-            <a href="../../layouts/about.html" >about</a>
-            <a href="../../layouts/blog.html">blog</a>
-            <a href="../../layouts/projects.html" style="color: #84B693;">projects</a>
+            <a href="victoriabecher.com">home</a>
+            <a href="../about" >about</a>
+            <a href="../blog">blog</a>
+            <a href="../projects" style="color: #84B693;">projects</a>
         </nav>
     </header>
 
@@ -34,16 +34,16 @@
                     <p>I began registering my readings in 2019, when I became an avid reader and started using the Goodreads app.</p>
                     <p>Goodreads functions as a social network for readers, offering features like book searches, virtual shelves, reading progress updates, and social interactions with other users. It also allows users to export their reading data in a tabular format (.csv file), which includes information such as book titles, authors, number of pages, end dates, and personal ratings.</p>
                         <figure class="image-container">
-                            <img src="../../assets/images/projects/project1/1.png" alt="My Goodreads bookshelf page">
+                            <img src="../assets/images/projects/project1/1.png" alt="My Goodreads bookshelf page">
                             <figcaption>My Goodreads bookshelf page</figcaption>
                         </figure>
                         <figure class="image-container">
-                            <img src="../../assets/images/projects/project1/3.png" alt="Exported data .csv file">
+                            <img src="../assets/images/projects/project1/3.png" alt="Exported data .csv file">
                             <figcaption>Exported data .csv file</figcaption>
                         </figure>
                     <p>However, the exported data lacks key information available on the platform, such as the <i>start date</i> of each book and its <i>genre</i>. To fill this gap, I also exported my reading database from Notion, which I had been using to track additional details about my readings.</p>
                     <figure class="image-container">
-                        <img src="../../assets/images/projects/project1/4.png" alt="My Notion reading database">
+                        <img src="../assets/images/projects/project1/4.png" alt="My Notion reading database">
                         <figcaption>My Notion reading database</figcaption>
                     </figure>
                     <p>After exporting the data, I performed a data transformation step using Python. This step involved cleaning the dataset, removing unnecessary columns (e.g., ISBN, average rating, publisher, binding), and combining information from Goodreads and Notion into a final, cohesive table.</p>
@@ -56,7 +56,7 @@
                     <h3>a. Conceptual Model</h3>
                     <p>The structure of my database was designed based on the principles of normalization learned in my course. I decomposed the all-in-one table into multiple smaller, related tables to minimize redundancy and maintain data integrity. The final design includes four tables:</p>
                     <figure class="image-container">
-                        <img src="../../assets/images/projects/project1/5.png" alt="Database tables and its attributes">
+                        <img src="../assets/images/projects/project1/5.png" alt="Database tables and its attributes">
                         <figcaption>Database tables and its attributes</figcaption>
                     </figure>
                     <ul>
@@ -67,14 +67,14 @@
                     </ul>
                     <p>The relationships between these tables are illustrated in the conceptual model below:</p>
                     <figure class="image-container">
-                        <img src="../../assets/images/projects/project1/6.png" alt="Conceptual model for the database">
+                        <img src="../assets/images/projects/project1/6.png" alt="Conceptual model for the database">
                         <figcaption>Conceptual model for the database</figcaption>
                     </figure>
                     <h3>b. Database Management System (DBMS)</h3>
                     <p>I selected PostgreSQL as the database management system (DBMS) for this project due to its reliability, open-source nature, and extensive community support. I used <b>pgAdmin</b> as the graphical interface to manage the database.</p>
                     <p>To create the tables and define their attributes, I used both SQL scripts and pgAdmin's GUI. While SQL scripting allowed me to practice and deepen my understanding of the language, the GUI provided an intuitive method for defining relationships and constraints, which was especially helpful for a first-time database project.</p>
                     <figure class="image-container">
-                        <img src="../../assets/images/projects/project1/7.png" alt="Create table tool in pgAdmin">
+                        <img src="../assets/images/projects/project1/7.png" alt="Create table tool in pgAdmin">
                         <figcaption><i>Create table</i> tool in pgAdmin</figcaption>
                     </figure>
                     <p>Sample SQL script used to create the "books" table:</p>
@@ -90,7 +90,7 @@
                     </div>
                     <p>The database structure was further visualized through an Entity-Relationship Diagram (ERD), created using pgAdmin tools:</p>
                     <figure class="image-container">
-                        <img src="../../assets/images/projects/project1/8.png" alt="ERD for the reading database">
+                        <img src="../assets/images/projects/project1/8.png" alt="ERD for the reading database">
                         <figcaption>ERD for the reading database created in pgAdmin</figcaption>
                     </figure>
                     <h3>3. Data Import (Load)</h3>
